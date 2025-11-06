@@ -1,0 +1,9 @@
+OWASP_ID,Main_Type,Sub_Type,Component,Feature,Risk,Mitigation,Metric,Tool
+A02:2021-Cryptographic Failures,Crypto API,crypto,WebCrypto,getRandomValues,AES misuse or weak RNG,Use crypto.subtle AES-GCM,Entropy bits/sec,libsodium.js
+A02:2021-Cryptographic Failures,Encoding,btoa,Base64 encode,Sensitive data exposure,Use encrypted storage,Encoded secret count,Semgrep
+A02:2021-Cryptographic Failures,Encoding,atob,Base64 decode,Input decoding risk,Validate before decode,Input validation %,ZAP
+A04:2021-Insecure Design,Storage,localStorage,Key-value store,Secret stored unencrypted,Use secure cookie or encrypt,Secret scan count,Burp DOM Invader
+A04:2021-Insecure Design,Storage,sessionStorage,Ephemeral store,Persistent session leakage,Expire & encrypt data,Session TTL check,Chrome DevTools
+A09:2021-Security Logging,Console,console.log,Debug output,PII leak in logs,Disable in prod,Log scan count,Gitleaks
+A09:2021-Security Logging,Console,console.error,Error output,Stack trace leak,Mask error output,Redaction %,Semgrep
+A10:2021-Server-Side Request Forgery,Network,fetch,HTTP request,Dynamic URL injection,Origin check & CSP,Origin validation %,OPA

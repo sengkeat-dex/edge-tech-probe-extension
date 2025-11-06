@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprehensive OWASP Test for Tech Probe Extension</title>
+    <meta name="generator" content="Test Generator 1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <h1>Comprehensive OWASP Test Page</h1>
+    <p>This page is used to test all 10 OWASP Top 10 categories.</p>
+    
+    <!-- A01: Broken Access Control -->
+    <form>
+        <input type="hidden" name="_token" value="test-token">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+    </form>
+    
+    <!-- A03: Injection -->
+    <form method="get" action="/search">
+        <input type="text" name="query" placeholder="Search...">
+        <input type="submit" value="Search">
+    </form>
+    
+    <!-- A05: Security Misconfiguration -->
+    <form>
+        <input type="text" placeholder="Test input">
+    </form>
+    
+    <!-- A07: Authentication Failures -->
+    <form autocomplete="off">
+        <input type="text" placeholder="Username">
+        <input type="password" autocomplete="new-password" placeholder="Password">
+    </form>
+    
+    <!-- A08: Software and Data Integrity Failures -->
+    <link href="http://example.com/insecure.css" rel="stylesheet">
+    
+    <div data-reactroot>
+        <p>React-like element for detection</p>
+    </div>
+    
+    <script>
+        // A01: Broken Access Control - URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('id', '123');
+        console.log('URL params:', urlParams.toString());
+        
+        // A02: Cryptographic Failures
+        if (crypto && crypto.getRandomValues) {
+            const array = new Uint32Array(10);
+            crypto.getRandomValues(array);
+            console.log('Random values generated:', array);
+        }
+        
+        // A02: Encoding - Base64
+        const testData = "Hello World";
+        const encoded = btoa(testData);
+        const decoded = atob(encoded);
+        console.log('Base64 test:', encoded, decoded);
+        
+        // A03: Injection - eval usage
+        eval("console.log('Eval usage detected')");
+        
+        // A04: Insecure Design - Storage
+        localStorage.setItem('testKey', 'testValue');
+        sessionStorage.setItem('sessionKey', 'sessionValue');
+        console.log('Storage test - localStorage length:', localStorage.length);
+        console.log('Storage test - sessionStorage length:', sessionStorage.length);
+        
+        // A06: Vulnerable and Outdated Components
+        // This is simulated by the outdated jQuery in the head
+        
+        // A08: Software and Data Integrity Failures - insecure resources
+        // This is simulated by the HTTP link in the head
+        
+        // A09: Security Logging
+        console.log('This is a debug log message');
+        console.error('This is an error message');
+        console.warn('This is a warning message');
+        
+        // A10: Server-Side Request Forgery
+        fetch('/test-endpoint')
+            .then(response => console.log('Fetch response:', response))
+            .catch(error => console.error('Fetch error:', error));
+            
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/test-endpoint', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                console.log('XHR completed');
+            }
+        };
+        xhr.send();
+        
+        // API1: Broken Object Level Authorization
+        console.log('Simulating API call to /api/users/123');
+        
+        // Simulate React being loaded
+        window.React = { version: '17.0.0' };
+        window.ReactDOM = { render: function() {} };
+        
+        // Simulate Google Analytics
+        window.ga = function() {};
+        window.gtag = function() {};
+    </script>
+</body>
+</html>

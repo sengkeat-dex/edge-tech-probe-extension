@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verification Test for Tech Probe Extension</title>
+    <meta name="description" content="Simple test page to verify extension is working">
+    <meta name="generator" content="Verification Test 1.0">
+</head>
+<body>
+    <div id="root">
+        <h1>Extension Verification Test</h1>
+        <p>This page is used to verify the Tech Probe extension is working correctly.</p>
+        
+        <!-- Simple test elements -->
+        <form>
+            <input type="hidden" name="_token" value="test-token">
+            <input type="text" placeholder="Username">
+        </form>
+        
+        <form method="get" action="/search">
+            <input type="text" name="query" placeholder="Search...">
+            <input type="submit" value="Search">
+        </form>
+        
+        <div data-reactroot>
+            <p>React-like element for detection</p>
+        </div>
+    </div>
+    
+    <script>
+        // A02:2021-Cryptographic Failures - Crypto API
+        if (crypto && crypto.getRandomValues) {
+            const array = new Uint32Array(5);
+            crypto.getRandomValues(array);
+            console.log('Verification crypto test:', array);
+        }
+        
+        // A02:2021-Cryptographic Failures - Base64 encoding/decoding
+        const testData = "Hello World";
+        const encoded = btoa(testData);
+        const decoded = atob(encoded);
+        console.log('Verification encoding test:', encoded, decoded);
+        
+        // A04:2021-Insecure Design - Storage
+        localStorage.setItem('verificationTest', 'testValue');
+        sessionStorage.setItem('sessionTest', 'sessionValue');
+        console.log('Storage test - localStorage length:', localStorage.length);
+        console.log('Storage test - sessionStorage length:', sessionStorage.length);
+        
+        // A09:2021-Security Logging and Monitoring Failures
+        console.log('Verification test log message');
+        console.error('Verification test error message');
+        console.warn('Verification test warning message');
+        
+        // A10:2021-Server-Side Request Forgery
+        fetch('/verification-test')
+            .catch(error => console.log('Verification fetch test'));
+            
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/verification-test', true);
+        xhr.send();
+        
+        // Additional test elements
+        console.log('Additional verification tests completed');
+    </script>
+</body>
+</html>

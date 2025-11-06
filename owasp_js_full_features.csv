@@ -1,0 +1,1 @@
+owasp_id,layer,type,sub_type,component,signature_value,purpose,risk_description,attack_vector,impact,likelihood,severity,control_type,mitigation_strategy,policy_reference,evidence_metric,test_method,test_tool,validation_status,owner,date_detected,ci_gate,notes

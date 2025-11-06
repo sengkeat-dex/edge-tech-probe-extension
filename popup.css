@@ -1,0 +1,24 @@
+body { font: 13px/1.4 system-ui, sans-serif; margin: 10px; width: 360px; }
+h1 { font-size: 16px; margin: 0 0 10px; }
+h3 { margin-top: 15px; margin-bottom: 5px; }
+h4 { margin: 10px 0 5px; font-size: 14px; }
+h5 { margin: 8px 0 3px; font-size: 13px; }
+#results { margin-top: 10px; max-height: 420px; overflow: auto; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 10px; }
+th, td { border: 1px solid #ddd; padding: 4px 6px; font-size: 12px; text-align: left; }
+.actions { margin-top: 8px; display: flex; gap: 6px; }
+button { cursor: pointer; }
+details { margin-top: 10px; }
+details summary { cursor: pointer; font-weight: bold; }
+.history-content { margin-top: 5px; }
+.history-item { margin-bottom: 10px; padding: 5px; border: 1px solid #eee; }
+.history-item strong { display: block; margin-bottom: 5px; }
+.history-item ul { margin: 0; padding-left: 20px; }
+/* OWASP-specific styling */
+h3:contains('OWASP') { color: #d9534f; }
+.tech-detail { margin-bottom: 15px; padding: 8px; border: 1px solid #eee; }
+.tech-detail h4 { color: #333; }
+.tech-detail p { margin: 5px 0; }
+/* Link styling */
+a { color: #007bff; text-decoration: none; }
+a:hover { text-decoration: underline; }
